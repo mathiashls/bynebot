@@ -1,0 +1,9 @@
+[Core]
+Name = Bynebot
+Module = bynebot
+
+[Python]
+Version = 2+
+
+[Documentation]
+Description = BYNE.bot borned to deal with BYNE's lights
