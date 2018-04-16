@@ -1,4 +1,4 @@
-from modules.quotes import BYNEBOT_INVALID_INPUT
+from modules.quotes import BYNEBOT_INVALID_INPUT as invalid_input_quotes
 from modules.light_controller import LightController
 
 from errbot import BotPlugin, botcmd, ValidationException
@@ -45,7 +45,7 @@ class ByneBot(BotPlugin):
             else:
                 yield("You may configure your light controller first!")
         else:
-            yield choice(BYNEBOT_INVALID_INPUT)
+            yield choice(invalid_input_quotes)
 
     @botcmd(split_args_with=None)
     def turn_off(self, msg, arg):
