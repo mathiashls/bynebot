@@ -1,4 +1,4 @@
-from modules import BYNEBOT_INVALID_INPUT
+from modules.quotes import BYNEBOT_INVALID_INPUT
 from modules.light_controller import LightController
 
 from errbot import BotPlugin, botcmd, ValidationException
