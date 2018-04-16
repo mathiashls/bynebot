@@ -9,14 +9,11 @@ class LightController(object):
 
     def turn(self, id, option):
         if isinstance(option, bool):
-            self.client.write_coil(id, option)
-            return
+            if isinstance(id, list):
+                for item in id:
+                    self.client.write_coil(item, option)
+                return
+            else:
+                self.client.write_coil(id, option)
+                return
         raise Exception
-
-    def turn_range_on(self, min, max):
-        for id in range(min, max+1):
-            self.client.write_coil(id, False)
-
-    def turn_range_off(self, min, max):
-        for id in range(min, max+1):
-            self.client.write_coil(id, True)
