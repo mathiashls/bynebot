@@ -9,7 +9,7 @@ from itertools import chain
 class ByneBot(BotPlugin):
 
     CONFIG_TEMPLATE = {
-        "all": [0, 3, 4, 5, 6, 7]
+        "all": [0, 3, 4, 5, 6, 7],
         "staff_back": 0,
         "staff_mid": 3,
         "staff_front": 4,
@@ -34,6 +34,11 @@ class ByneBot(BotPlugin):
 
     @botcmd(split_args_with=None)
     def turn_on(self, msg, arg):
+        """
+            Turn the lights on.
+
+            Syntax: turn on [place]
+        """
         if self.argument_is_valid(arg):
             if self['light_controller']:
                 self['light_controller'].turn(self['config'][arg], True)
@@ -44,6 +49,11 @@ class ByneBot(BotPlugin):
 
     @botcmd(split_args_with=None)
     def turn_off(self, msg, arg):
+        """
+            Turn the lights off.
+
+            Syntax: turn off [place]
+        """
         if self.argument_is_valid(arg):
             if self['light_controller']:
                 self['light_controller'].turn(self['config'][arg], False)
